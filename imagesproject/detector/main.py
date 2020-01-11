@@ -48,7 +48,7 @@ def detect(upload_image):
             io_buffer = io.BytesIO(img_buffer)
             # インメモリのバイナリストリームからBASE64エンコードに変換
             result_img = base64.b64encode(io_buffer.getvalue()).decode().replace("'", "")
-        resslt_list.append("error:顔を認識できませんでした")
+        result_list.append("error:顔を認識できませんでした")
         return (result_list, result_name, result_img)
     # カスケードファイルの読み込み
     print(cascade_file_path)
