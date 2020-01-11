@@ -34,6 +34,7 @@ class PredView(TemplateView):
         print("予測1")
         result = detect(image)
         # 顔分類の結果を格納
+        
         self.params['result_list'], self.params['result_name'], self.params['result_img'] = result
         # ページの描画指示
         print("予測4")
