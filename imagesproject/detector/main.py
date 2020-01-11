@@ -41,14 +41,14 @@ def detect(upload_image):
             image_rgb=image_rgb[y:y+h,x:x+w]
             # face_detect_count = face_detect_count + 1
     else:
-        print('image' + str(i) + ':NoFace')
+        #print('image' + str(i) + ':NoFace')
         is_success, img_buffer = cv2.imencode(".png", image_rgb)
         if is_success:
             # 画像をインメモリのバイナリストリームに流し込む
             io_buffer = io.BytesIO(img_buffer)
             # インメモリのバイナリストリームからBASE64エンコードに変換
             result_img = base64.b64encode(io_buffer.getvalue()).decode().replace("'", "")
-        reselt_list("error:顔を認識できませんでした")
+        resslt_list.append("error:顔を認識できませんでした")
         return (result_list, result_name, result_img)
     # カスケードファイルの読み込み
     print(cascade_file_path)
